@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Demo Game</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- JavaSript file -->
+<script src="./js/script.js" defer></script>
+<!-- CSS Stylesheet -->
+<link rel="stylesheet" href="./css/stylesheet.css">
+
+</head>
+  <body onload="pageLoad()">
+
+      <div class="instructions_container">
+          <p>
+            This is a demo game built using HTML, CSS and JavaScript. The artwork used in this demo is not my own and is used for educational purposes only. The code however is mine. 
+          </p>
+          <p>
+            How to play: <br>
+            1) You are a barbarian, go kill stuff. Explore the world around you by pressing the "Explore" button.<br>
+            2) Once you encounter something viel, try to kill it by pressing the "Attack" button.<br>
+            3) If you're not feeling up for a fight, try running away by pressing the "Run Away" button.<br>
+            4) If you choose to fight, three attack dice and one block dice will appear for each character per attack. Whoever has the highest total attack dice and has the highest block dice value wins the attack. The total attack value of all three dice from the losing attacker is subtracted from the winning attackers dice total to compute the damage received.
+            <br>
+            5) If the loser has a higher block dice than the block dice of the winner, the attack fails and no damage is received.<br>
+            6) If the attack totals for both characters are even, no damage is given to either character.<br>
+            7) Both characters roll a run dice if you attempt to run away. If your run dice is less than or equal to your attackers run dice you will receive the full attack dice total in damage so choose wisely.<br>
+            8) Explore, Fight until you are victorious or you die!
+          </p>
+          <div class="play_btn">
+            <button id="play_btn" onclick="play()">Play</button>
+          </div>
+      </div>
+
+  	<section class="gameBoard_container">
+  		<img id="backgroungImg" src="./images/environment/1.jpg" alt="image">
+  		<div class="container" id="hero_container">
+  		</div>
+  		<div class="stats hero_stats">
+  			<p>Name:<span id="hero_name"> Koggarth</span>&nbsp;|&nbsp;Health:<span id="hero_health">100</span></p>
+  		</div>
+
+  		<div class="game_message">
+  			<p id="game_message">I'm in the mood to go kill something!</p>
+  		</div>
+
+  		<div id="mainText_container"> 
+  		</div>
+  		<div class="container" id="villian_container">
+  			<img id="villian_img" src="" alt="image">
+  		</div>
+  		<div class="stats villian_stats">
+  			<p>Name:<span id="villian_name"></span>&nbsp;|&nbsp;Health:<span id="villian_health"></span></p>
+  		</div>
+  		<div>
+  			<button class="explore_btn" id="explore_btn" onclick="randomBackground()">Explore!</button>
+  		</div>
+  	</section>
+
+<!-- Dice Toggle Section -->
+  	<section class="dice_toggle">
+  		<div class="dice_placeHolder" id="hero_attackdice1_placeHolder">
+  		</div>
+  		<div class="dice_placeHolder" id="hero_attackdice2_placeHolder">
+  		</div>
+  		<div class="dice_placeHolder" id="hero_attackdice3_placeHolder">
+  		</div>
+  		<div class="dice_placeHolder" id="hero_blockdice_placeHolder">
+  		</div>
+  		<div class="dice_placeHolder" id="hero_rundice_placeHolder">
+  		</div>
+
+  		<div class="dice hero_attackdice1">
+        <img id="hero_attackdice1" src="" alt="hero attack dice 1">
+  		</div>
+  		<div class="dice hero_attackdice2">
+        <img id="hero_attackdice2" src="" alt="hero attack dice 2">
+  		</div>
+  		<div class="dice hero_attackdice3">
+        <img id="hero_attackdice3" src="" alt="hero attack dice 3">
+  		</div>
+  		<div class="dice hero_blockdice">
+        <img id="hero_blockdice" src="" alt="hero block dice">
+  		</div>
+  		<div class="dice hero_rundice">
+        <img id="hero_rundice" src="" alt="hero run dice">
+  		</div>
+  		
+  	<!-- Buttons -->
+  		<div>
+  			<button class="dice_btn" id="attack_btn" onclick="attackBtnOnClickDisable()">Attack</button>
+  		</div>
+  		<div>
+  			<button class="dice_btn" id="run_btn" onclick="runBtnOnClickDisable()">Run Away</button>
+  		</div>
+  	<!-- /End Buttons -->
+
+  		<div class="dice_placeHolder" id="villian_attackdice1_placeHolder">
+  		</div>
+  		<div class="dice_placeHolder" id="villian_attackdice2_placeHolder">
+  		</div>
+  		<div class="dice_placeHolder" id="villian_attackdice3_placeHolder">
+  		</div>
+  		<div class="dice_placeHolder" id="villian_blockdice_placeHolder">
+  		</div>
+  		<div class="dice_placeHolder" id="villian_rundice_placeHolder">
+  		</div>
+
+  		<div class="dice villian_attackdice1">
+  			<img id="villian_attackdice1" src="" alt="villian attack dice 1">
+  		</div>
+  		<div class="dice villian_attackdice2">
+  			<img id="villian_attackdice2" src="" alt="villian attack dice 2">
+  		</div>
+  		<div class="dice villian_attackdice3">
+  			<img id="villian_attackdice3" src="" alt="villian attack dice 3">
+  		</div>
+  		<div class="dice villian_blockdice">
+  			<img id="villian_blockdice" src="" alt="villian block dice">
+  		</div>
+  		<div class="dice villian_rundice">
+  			<img id="villian_rundice" src="" alt="villian run dice">
+  		</div>
+  	</section>
+
+
+  </body>
+ </html>
