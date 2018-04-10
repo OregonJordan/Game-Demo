@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- JavaSript file -->
-<script src="./js/script.js" defer></script>
+<script src="./js/script.js"></script>
 <!-- CSS Stylesheet -->
 <link rel="stylesheet" href="./css/stylesheet.css">
 
@@ -28,9 +28,9 @@
             7) Both characters roll a run dice if you attempt to run away. If your run dice is less than or equal to your attackers run dice you will receive the full attack dice total in damage so choose wisely.<br>
             8) Explore, Fight until you are victorious or you die!
           </p>
-          <div class="play_btn">
-            <button id="play_btn" onclick="play()">Play</button>
-          </div>
+         <div class="play_btn_div">
+          <button class="play_btn" onclick="playGame()">Play</button>
+        </div>
       </div>
 
   	<section class="gameBoard_container">
@@ -38,7 +38,7 @@
   		<div class="container" id="hero_container">
   		</div>
   		<div class="stats hero_stats">
-  			<p>Name:<span id="hero_name"> Koggarth</span>&nbsp;|&nbsp;Health:<span id="hero_health">100</span></p>
+  			<p>&nbsp;&nbsp;<span id="hero_name">Koggarth</span>&nbsp;|&nbsp;Health:<span id="hero_health">200</span></p>
   		</div>
 
   		<div class="game_message">
@@ -51,7 +51,7 @@
   			<img id="villian_img" src="" alt="image">
   		</div>
   		<div class="stats villian_stats">
-  			<p>Name:<span id="villian_name"></span>&nbsp;|&nbsp;Health:<span id="villian_health"></span></p>
+  			<p>&nbsp;&nbsp;<span id="villian_name"></span>&nbsp;|&nbsp;Health:<span id="villian_health"></span></p>
   		</div>
   		<div>
   			<button class="explore_btn" id="explore_btn" onclick="randomBackground()">Explore!</button>
