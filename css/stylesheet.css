@@ -18,11 +18,6 @@
 	font-size: 12px;
 }
 
-.play_btn {
-	text-align: center;
-}
-
-
 /*Browser Display Specs*/
 aside, article, section, header, footer, nav {
 	display: block;
@@ -36,6 +31,7 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, ul, li {
 	font: inherit;
 }
 .gameBoard_container {
+	opacity: 0;
 	position: relative;
 	width: 700px;
 	height: 280px;
@@ -147,7 +143,11 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 /*------- Buttons ---------*/
-.explore_btn {
+.play_btn_div {
+	margin-top: 5px;
+}
+
+.explore_btn, .play_btn{
 	background: #889ac2;
 	border-radius: 10%;
 	padding: 5px;
